@@ -1,7 +1,6 @@
-/* FRONTIER */
-const { env } = require('frontier')
-const log = require('frontier/lib/logger')
-const argv = require('frontier/lib/args')()
+const {env} = require('@frontierjs/toolbelt')
+const log = require('@frontierjs/toolbelt/lib/logger')
+const argv = require('@frontierjs/toolbelt/lib/args')
 const fs = require('fs')
 const path = require('path')
 

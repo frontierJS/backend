@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/frontierjs/backend#readme",
   "dependencies": {
-    "@frontierjs/toolbelt": "github:frontierjs/toolbelt"
+    "@frontierjs/toolbelt": "github:frontierjs/toolbelt",
+    "better-sqlite3": "^5.4.3"
   }
 }

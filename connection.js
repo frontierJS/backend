@@ -1,7 +1,8 @@
 const { env } = require('@frontierjs/toolbelt')
 
 const opts = {
-    memory: env.get('DB_USE_MEM') ? true : false,
+  //TODO: fix the options
+    memory: env.get('DB_USE_MEM') === 'true' ? true : false,
     verbose: env.get('DB_USE_LOG') ? console.log : null
 }
 

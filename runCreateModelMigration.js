@@ -30,6 +30,6 @@ if (args.models) {
 modelFiles.forEach(file => {
     let model = require(modelPath + file)
   console.log(model)
-    //let stmt = model.createTable()
-    //log.info({stmt})
+    let stmt = model.createTable()
+    log.info({stmt})
 })

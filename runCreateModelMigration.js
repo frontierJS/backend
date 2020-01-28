@@ -16,11 +16,7 @@ let tryIt = function(fn, ...arguments) {
 }
 
 let modelPath = (() => {
-  log.info({__dirname})
-  log.info(process.cwd())
-    //might need to change once in frontier
-    let p = path.resolve(process.cwd() + '../../../')
-  console.log(p)
+      let p = path.resolve(process.cwd() + '/src/Models')
     return p.slice(0, p.lastIndexOf('/')) + '/Models/'
 })()
 

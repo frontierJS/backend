@@ -230,37 +230,6 @@ class Model extends BaseModel {
         })
         return this
     }
-    //Moved to BaseModel to handle migration type stuff
-    // static get fieldsSql() {
-    //     return this.fields.map(({name, type, opts}) => {
-    //         return `\n ${name} ${type} ${opts || 'DEFAULT NULL'}` 
-    //     })
-    // }
-    // static createTableSql({force = false} = {}) {
-    //     let sql = `
-    //         /*
-    //             CREATE STATEMENT for ${this.table}
-    //         */
-    //         CREATE TABLE IF NOT EXISTS ${this.table} ( ${this.fieldsSql} 
-    //         );
-    //     `
-    //     return force ? this.dropTableSql + sql : sql
-    // }
-    // static dropTableSql({removeIndexes = false}) {
-    //     //TODO: handle remove indexes
-    //     return `
-    //         /*
-    //             DROP STATEMENT for ${this.table}
-    //         */
-    //         DROP TABLE IF EXISTS ${this.table};
-    //     `
-    // }
-    // static createTable() {
-    //     return DB.execSql(this.createTableSql(...arguments))
-    // }
-    // static dropTable() {
-    //     return DB.execSql(this.dropTableSql(...arguments))
-    // }
 }
 
 module.exports = Model

@@ -83,7 +83,7 @@ class BaseModel {
     static runMigration(type, action) {
         let migrationLog = fs.createWriteStream('migrations.log', {flags: 'a'});
         let sql = this[type + 'Sql']()
-        // DB.execSql(sql)
+         DB.execSql(sql)
         // log.info(sql)
         let entry = {
             id: this.table + '-' + type + '-' + action + '-' + new Date().toJSON(),

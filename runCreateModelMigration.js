@@ -1,6 +1,6 @@
-const {env} = require('@frontierjs/toolbelt')
-const log = require('@frontierjs/toolbelt/lib/logger')
-const argv = require('@frontierjs/toolbelt/lib/args')
+const { env, logger, args } = require('@frontierjs/toolbelt')
+const log = logger
+//const argv = require('@frontierjs/toolbelt/lib/args')
 const fs = require('fs')
 const path = require('path')
 
@@ -16,20 +16,24 @@ let tryIt = function(fn, ...arguments) {
 }
 
 let modelPath = (() => {
-    //might need to change once in froniter
-    let p = path.resolve(env.get('npm_package_main'))
+  log.info({__dirname})
+  log.info(process.cwd())
+    //might need to change once in frontier
+    let p = path.resolve(process.cwd() + '../../../')
+  console.log(p)
     return p.slice(0, p.lastIndexOf('/')) + '/Models/'
 })()
 
 let modelFiles = []
-if (argv.models) {
-   modelFiles = argv.models.split(',')
+if (args.models) {
+   modelFiles = args.models.split(',')
 } else {
      modelFiles = tryIt(fs.readdirSync, modelPath)
 }
 
 modelFiles.forEach(file => {
     let model = require(modelPath + file)
-    let stmt = model.createTable()
-    log.info({stmt})
+  console.log(model)
+    //let stmt = model.createTable()
+    //log.info({stmt})
 })

@@ -41,4 +41,4 @@ class Database {
 
 }
 
-module.exports = new Database('authDB', connection)
+module.exports = new Database('MainDB', connection)

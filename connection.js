@@ -1,4 +1,5 @@
 const { env } = require('@frontierjs/toolbelt')
+console.log('something')
 console.log(env.get('DB'))
 
 const opts = {

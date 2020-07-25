@@ -4,5 +4,6 @@ import BaseModel from './BaseModel.js'
 import Database from './Database.js'
 
 let env = Toolbelt.env
-let backend = { Model, BaseModel, Database, Toolbelt, env }
-export default backend
+export { Model, BaseModel, Database, Toolbelt, env }
+// let backend = { Model, BaseModel, Database, Toolbelt, env }
+// export default backend

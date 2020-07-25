@@ -1,7 +1,7 @@
 import Toolbelt from '@frontierjs/toolbelt'
 import sqlite from 'better-sqlite3'
 
-let env = Toolbelt
+let env = Toolbelt.env
 
 const opts = {
   //TODO: fix the options
@@ -9,6 +9,7 @@ const opts = {
   verbose: env.get('DB_USE_LOG') ? console.log : null,
 }
 
-const Connection = sqlite(env.get('DB'), opts)
+const Connection = sqlite('memory', opts)
+// const Connection = sqlite(env.get('DB'), opts)
 
 export default Connection

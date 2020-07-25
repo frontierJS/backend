@@ -1,12 +1,7 @@
-const Toolbelt = require('@frontierjs/toolbelt') 
-const Model = require('./Model')
-const BaseModel = require('./BaseModel')
-const Database = require('./Database')
+import Toolbelt from '@frontierjs/toolbelt'
+import Model from './Model.js'
+import BaseModel from './BaseModel.js'
+import Database from './Database.js'
 
-module.exports = {
-  Model,
-  BaseModel,
-  Database,
-  Toolbelt,
-  env: Toolbelt.env
-}
+let env = Toolbelt.env
+export { Model, BaseModel, Database, Toolbelt, env }

@@ -1,11 +1,14 @@
-const { env } = require('@frontierjs/toolbelt')
+import Toolbelt from '@frontierjs/toolbelt'
+import sqlite from 'better-sqlite3'
+
+let env = Toolbelt
 
 const opts = {
   //TODO: fix the options
   memory: env.get('DB_USE_MEM') === 'true' ? true : false,
-  verbose: env.get('DB_USE_LOG') ? console.log : null
+  verbose: env.get('DB_USE_LOG') ? console.log : null,
 }
 
-const Connection = require('better-sqlite3')(env.get('DB'), opts)
+const Connection = sqlite(env.get('DB'), opts)
 
-module.exports = Connection
+export default Connection
